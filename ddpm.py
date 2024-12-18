@@ -11,7 +11,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 logging.basicConfig(format="%(asctime)s - %(levelname)s: %(message)s", level=logging.INFO, datefmt="%I:%M:%S")
 
-
+# Diffusion process,  
 class Diffusion:
     def __init__(self, noise_steps=1000, beta_start=1e-4, beta_end=0.02, img_size=256, device="cuda"):
         self.noise_steps = noise_steps
@@ -99,8 +99,8 @@ def launch():
     args.epochs = 500
     args.batch_size = 12
     args.image_size = 64
-    args.dataset_path = r"C:\Users\dome\datasets\landscape_img_folder"
-    args.device = "cuda"
+    args.dataset_path = r"/lab/chengr_lab/12232381/dataset/CIFAR/cifar10-64/train"
+    args.device = "cpu"   # cuda
     args.lr = 3e-4
     train(args)
 
